@@ -13,7 +13,7 @@ echo "Email: " . $_SESSION['email'] . "<br>";
     <title>Document</title>
 </head>
 <body>
-    <form action="/Prog-P4/SD1M4SKILLS/Week5/afhandeling.php" method="post">
+    <form action="afhandeling.php" method="post">
         <div>
             <label>Name:</label>
             <input type="text" name="naam" required>

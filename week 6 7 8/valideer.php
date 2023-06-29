@@ -8,6 +8,6 @@ function isNotValidString(string $data): bool {
     return empty(trim($data));
 }
 
-function isNumber(string $number): bool {
+function isValidNumeric(string $number): bool {
     return is_numeric($number);
 }

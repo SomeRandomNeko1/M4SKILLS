@@ -1,3 +1,4 @@
+<?php
 function isValidNumeric(string $data): bool {
     return is_numeric($data);
 }

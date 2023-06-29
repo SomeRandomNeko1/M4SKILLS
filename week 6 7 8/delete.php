@@ -1,12 +1,14 @@
 <?php
 declare(strict_types=1);
 session_start();
-require_once "includes/connectPDO.php";
+require_once "connectPDO.php";
 
-echo 'Gegevens verwijderen' . '</br>';
 $conn = db_connect();
 
-$deleteQuery = "DELETE FROM voorbeeld WHERE id=9";
-$conn->exec($deleteQuery);
+if (isset($_POST['delete_button'])) {
+    $deleteQuery = "DELETE FROM `prog-week6` LIMIT 1";
+    $conn->exec($deleteQuery);
 
+    echo "First row deleted successfully!";
+}
 ?>

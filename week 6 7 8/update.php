@@ -1,17 +1,18 @@
 <?php
 declare(strict_types=1);
 session_start();
-require_once "includes/connectPDO.php";
+require_once "connectPDO.php";
 
-echo 'Gegevens uitlezen' . '</br>';
 $conn = db_connect();
 
-$selectVoorbeeld = "SELECT naam FROM voorbeeld";
-$results = $conn->query($selectVoorbeeld);
-$results->setFetchMode(PDO::FETCH_ASSOC);
+// Get the user input
+$userInput = $_POST['user_input'];
 
-foreach ($results as $row) {
-    echo "Paginanaam {$row['naam']}</br>";
-}
+// Update the user's text
+$updateQuery = "UPDATE `prog-week6` SET user = :userText";
+$stmt = $conn->prepare($updateQuery);
+$stmt->bindValue(':userText', $userInput);
+$stmt->execute();
 
+echo "User text updated successfully!";
 ?>
