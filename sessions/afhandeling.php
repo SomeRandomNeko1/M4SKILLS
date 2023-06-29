@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$_SESSION["naam"] = "oscar";
+$_SESSION["naam"] = "Li hong";
 
 header("Location: /");
 ?>
